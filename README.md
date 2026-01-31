@@ -9,8 +9,8 @@ Premium Figma design created for **Superteam Brazil**, positioning the community
 
 ## 🔗 Links
 
-- **Figma Design (View Only):** [seu-link-aqui  ](https://www.figma.com/design/8sth9uoPtdt8CWWzn7PwyC/Superteam-Brasil-LP-Project?node-id=0-1&t=IZziizMfRRvWWnt9-1)
-- **Interactive Prototype:** [link](https://www.figma.com/proto/8sth9uoPtdt8CWWzn7PwyC/Superteam-Brasil-LP-Project?node-id=0-1&t=IZziizMfRRvWWnt9-1)
+- **Figma Design (View Only):** [Link](https://www.figma.com/design/8sth9uoPtdt8CWWzn7PwyC/Superteam-Brasil-LP-Project?node-id=0-1&t=IZziizMfRRvWWnt9-1)
+- **Interactive Prototype:** [Link](https://www.figma.com/proto/8sth9uoPtdt8CWWzn7PwyC/Superteam-Brasil-LP-Project?node-id=0-1&t=IZziizMfRRvWWnt9-1)
 - **Design Rationale / Presentation:** seu-link-aqui  
 - **Announcement / Submission Post:** seu-link-aqui  
 
