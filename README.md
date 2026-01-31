@@ -50,13 +50,23 @@ Colors are intentionally controlled to maintain a premium Web3 feel while reinfo
 - Join / Build CTA  
 - Complete footer with navigation  
 
-### Members Page
+## Members Page (Builders Directory)
+
+The platform includes a dedicated community members page, designed to highlight builders and the Superteam Brazil Core Team.
+
+![Members Page Preview](./members-page.png)
+
+### Features:
 - Dedicated members directory page  
 - Grid-based member cards (avatar, name, role)  
 - Skill and role-based visual filtering  
-- Core Team visual distinction  
-- Consistent layout with the landing page  
-- Desktop and mobile versions  
+- Clear visual distinction for Core Team members  
+- Consistent visual language with the landing page  
+- Fully responsive (desktop and mobile)
+
+### Navigation:
+- Accessible directly from the main landing page navigation
+  
 
 ### Figma File
 - Style guide (colors, typography, spacing, shadows)  
@@ -92,4 +102,4 @@ Colors are intentionally controlled to maintain a premium Web3 feel while reinfo
 **Date:** January 2026  
 **Tags:** @SuperteamBR @SuperteamEarn  
 
-Made with 💚💛 for the Brazilian Solana community.
+💚💛 Brazilian Solana community.
