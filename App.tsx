@@ -470,7 +470,7 @@ const App: React.FC = () => {
             <div className="max-w-7xl mx-auto">
               <div className="mb-20">
                 <span className="text-[11px] font-black uppercase tracking-[0.2em] text-verde-400 mb-3 block">Nossa Missão</span>
-                <h2 className="text-4xl md:text-5xl font-display font-black text-white tracking-tight">Construa seu futuro no Web3</h2>
+                <h2 className="text-4xl md:text-5xl font-display font-black text-white tracking-tight">Construa seu futuro na Web3</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -602,7 +602,7 @@ const App: React.FC = () => {
           <section id="community" className="py-32 px-6 bg-background-primary overflow-hidden">
             <div className="max-w-7xl mx-auto text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-display font-black text-white mb-6 tracking-tight">Rede de Builders</h2>
-              <p className="text-neutral-500 text-lg font-medium">Projetos <span className="text-verde-500 font-black tracking-tighter">BR</span> construindo o futuro do Web3</p>
+              <p className="text-neutral-500 text-lg font-medium">Projetos <span className="text-verde-500 font-black tracking-tighter">BR</span> construindo o futuro da Web3</p>
             </div>
             
             <div className="mask-fade-x relative py-12">
@@ -631,7 +631,7 @@ const App: React.FC = () => {
                 ].map((item, i) => (
                   <div key={i} className="glass-verde rounded-[2.5rem] border border-white/5 overflow-hidden transition-all shadow-lg hover:border-white/10">
                     <button 
-                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      onClick={() => setView('OpenFaq', openFaq === i ? null : i)}
                       className="w-full px-12 py-8 flex items-center justify-between text-left hover:bg-verde-500/5 transition-colors"
                     >
                       <span className="font-black text-white text-lg tracking-tight">{item.q}</span>
