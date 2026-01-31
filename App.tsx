@@ -202,51 +202,59 @@ const Nav = ({ setView, currentView }: { setView: (v: 'home' | 'members') => voi
   );
 };
 
-const MemberCard: React.FC<{ member: Member }> = ({ member }) => (
-  <div className={`glass-verde p-8 rounded-3xl border transition-all duration-300 group ${
-    member.isCore 
-      ? 'border-verde-500/30 bg-verde-500/[0.04] ring-1 ring-verde-500/10 shadow-[0_20px_40px_-15px_rgba(16,185,129,0.1)]' 
-      : 'border-white/5 hover:border-white/10 shadow-xl'
-  } hover:-translate-y-2`}>
-    <div className="flex items-start justify-between mb-8">
-      <div className="relative">
-        <div className={`w-16 h-16 rounded-2xl overflow-hidden ${member.isCore ? 'ring-2 ring-verde-500 p-0.5' : 'ring-1 ring-white/10'}`}>
-          <img src={member.avatar} alt={member.name} className="w-full h-full object-cover rounded-[14px]" />
-        </div>
-        {member.isCore && (
-          <div className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-verde-600 rounded-md text-[9px] font-black text-white shadow-xl uppercase tracking-tighter">Core</div>
-        )}
-      </div>
-      <div className="flex gap-3">
-        {member.twitter && (
-          <a href={`https://twitter.com/${member.twitter}`} target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-xl hover:bg-azul-500/20 hover:text-azul-400 transition-all">
-            <Twitter size={16} />
-          </a>
-        )}
-        <a href="#" className="p-2.5 bg-white/5 rounded-xl hover:bg-neutral-800 transition-all">
-          <DiscordIcon size={16} />
-        </a>
-      </div>
-    </div>
-    
-    <div className="space-y-1.5 mb-8">
-      <h3 className={`font-display font-black text-xl tracking-tight ${member.isCore ? 'text-white' : 'text-neutral-200'}`}>{member.name}</h3>
-      <p className="text-neutral-500 text-sm font-semibold uppercase tracking-wider">{member.role}</p>
-    </div>
+const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
+  const accentColor = member.isCore ? 'verde' : 'azul';
 
-    <div className="flex flex-wrap gap-2">
-      {member.skills.map(skill => (
-        <span key={skill} className={`px-3 py-1.5 text-[10px] font-black uppercase rounded-lg tracking-widest border ${
-          member.isCore 
-            ? 'bg-verde-500/10 border-verde-500/20 text-verde-400' 
-            : 'bg-white/5 border-white/5 text-neutral-400'
-        }`}>
-          {skill}
-        </span>
-      ))}
+  return (
+    <div className="group relative p-8 rounded-3xl bg-[#0E0E0E] border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
+      {/* Hover Glow Background */}
+      <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${member.isCore ? 'from-verde-500/10' : 'from-azul-500/10'} to-transparent pointer-events-none`} />
+      
+      {/* Top Border Highlight */}
+      <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent ${member.isCore ? 'via-verde-500/50' : 'via-azul-500/50'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+      
+      <div className="relative z-10">
+        <div className="flex items-start justify-between mb-8">
+          <div className="relative">
+            <div className={`w-16 h-16 rounded-2xl overflow-hidden transition-all duration-500 ${member.isCore ? 'ring-2 ring-verde-500 p-0.5 shadow-[0_0_15px_rgba(16,185,129,0.3)]' : 'ring-1 ring-white/10 group-hover:ring-azul-500/50'}`}>
+              <img src={member.avatar} alt={member.name} className="w-full h-full object-cover rounded-[14px]" />
+            </div>
+            {member.isCore && (
+              <div className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-verde-600 rounded-md text-[9px] font-black text-white shadow-xl uppercase tracking-tighter">Core</div>
+            )}
+          </div>
+          <div className="flex gap-3">
+            {member.twitter && (
+              <a href={`https://twitter.com/${member.twitter}`} target="_blank" rel="noopener noreferrer" className={`p-2.5 rounded-xl transition-all duration-300 ${member.isCore ? 'bg-verde-500/10 text-verde-400 hover:bg-verde-500 hover:text-white' : 'bg-white/5 text-neutral-400 hover:bg-azul-500/20 hover:text-azul-400'}`}>
+                <Twitter size={16} />
+              </a>
+            )}
+            <a href="#" className={`p-2.5 rounded-xl transition-all duration-300 ${member.isCore ? 'bg-verde-500/10 text-verde-400 hover:bg-verde-500 hover:text-white' : 'bg-white/5 text-neutral-400 hover:bg-azul-500/20 hover:text-azul-400'}`}>
+              <DiscordIcon size={16} />
+            </a>
+          </div>
+        </div>
+        
+        <div className="space-y-1.5 mb-8">
+          <h3 className="font-display font-black text-xl tracking-tight text-white">{member.name}</h3>
+          <p className={`text-sm font-semibold uppercase tracking-wider transition-colors ${member.isCore ? 'text-verde-400' : 'text-neutral-500 group-hover:text-azul-400'}`}>{member.role}</p>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {member.skills.map(skill => (
+            <span key={skill} className={`px-3 py-1.5 text-[10px] font-black uppercase rounded-lg tracking-widest border transition-all duration-300 ${
+              member.isCore 
+                ? 'bg-verde-500/10 border-verde-500/20 text-verde-400 group-hover:border-verde-500/40' 
+                : 'bg-white/5 border-white/5 text-neutral-400 group-hover:border-azul-500/30 group-hover:text-azul-300'
+            }`}>
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const MembersView = () => {
   const [searchTerm, setSearchTerm] = useState('');
