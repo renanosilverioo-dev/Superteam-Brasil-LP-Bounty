@@ -44,9 +44,31 @@ const FILTER_CATEGORIES = [
 ];
 
 const MOCK_EVENTS: STEvent[] = [
-  { id: '1', title: 'Solana Hacker House Brazil', date: '20 Out', location: 'São Paulo, Brasil', isFeatured: true, type: 'Hackathon' },
-  { id: '2', title: 'Workshop Anchor 101', date: '05 Nov', location: 'Online', type: 'Educação' },
-  { id: '3', title: 'Superteam Brazil Meetup', date: '12 Nov', location: 'Rio de Janeiro', type: 'Networking' },
+  { 
+    id: '1', 
+    title: 'Solana Hacker House Brazil', 
+    date: '20 Out', 
+    location: 'São Paulo, Brasil', 
+    isFeatured: true, 
+    type: 'Hackathon',
+    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1200'
+  },
+  { 
+    id: '2', 
+    title: 'Workshop Anchor 101', 
+    date: '05 Nov', 
+    location: 'Online', 
+    type: 'Educação',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600'
+  },
+  { 
+    id: '3', 
+    title: 'Superteam Brazil Meetup', 
+    date: '12 Nov', 
+    location: 'Rio de Janeiro', 
+    type: 'Networking',
+    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=600'
+  },
 ];
 
 const METRICS: Metric[] = [
@@ -443,7 +465,7 @@ const App: React.FC = () => {
                 <h2 className="text-4xl md:text-5xl font-display font-black text-white tracking-tight">Construa seu futuro no Web3</h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
                   { title: 'Grants & Financiamento', icon: <Banknote />, color: 'verde', desc: 'Receba suporte financeiro direto da Solana Foundation para projetos inovadores.' },
                   { title: 'Jobs & Bounties', icon: <Trophy />, color: 'amarelo', desc: 'Acesse as melhores oportunidades de trabalho e recompensas por tasks específicas.' },
@@ -451,13 +473,33 @@ const App: React.FC = () => {
                   { title: 'Educação', icon: <GraduationCap />, color: 'verde', desc: 'Workshops, cursos e hackathons para levar seu conhecimento de Rust e Solana ao topo.' },
                   { title: 'Rede Global', icon: <Globe />, color: 'roxo', desc: 'Conecte-se com membros da Superteam em mais de 10 países ao redor do mundo.' },
                   { title: 'Eventos Presenciais', icon: <Calendar />, color: 'amarelo', desc: 'Meetups, happy hours e Hacker Houses exclusivos para a comunidade BR.' },
-                ].map((pillar, i) => (
-                  <div key={i} className="group p-10 glass-verde rounded-[2.5rem] border border-white/5 hover:border-verde-500/40 transition-all duration-500 cursor-default">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-${pillar.color}-500/10 border border-${pillar.color}-500/20 text-${pillar.color}-400 transition-all group-hover:scale-110`}>
-                      {pillar.icon}
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-verde-300 transition-colors tracking-tight">{pillar.title}</h3>
-                    <p className="text-neutral-500 leading-relaxed text-base font-medium">{pillar.desc}</p>
+                ].map((item, i) => (
+                  <div key={i} className={`group relative p-8 rounded-3xl bg-[#0E0E0E] border border-white/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl overflow-hidden`}>
+                      {/* Hover Glow Background */}
+                      <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-${item.color}-500/10 to-transparent pointer-events-none`} />
+                      
+                      {/* Top Border Highlight */}
+                      <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-${item.color}-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                      
+                      <div className="relative z-10">
+                          <div className="flex justify-between items-start mb-8">
+                               {/* Icon Box */}
+                              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border border-white/10 bg-white/5 text-${item.color}-400 transition-all duration-500 group-hover:scale-110 group-hover:bg-${item.color}-500 group-hover:text-black group-hover:border-${item.color}-400 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.3)]`}>
+                                  {React.cloneElement(item.icon as React.ReactElement, { size: 26 })}
+                              </div>
+                              {/* Hover Arrow */}
+                              <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0">
+                                  <ArrowRight className={`text-${item.color}-400`} size={20} />
+                              </div>
+                          </div>
+                          
+                          <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-white transition-colors tracking-tight">
+                              {item.title}
+                          </h3>
+                          <p className="text-neutral-500 text-sm leading-relaxed font-medium group-hover:text-neutral-400 transition-colors">
+                              {item.desc}
+                          </p>
+                      </div>
                   </div>
                 ))}
               </div>
@@ -466,11 +508,23 @@ const App: React.FC = () => {
 
           {/* --- IMPACT DASHBOARD --- */}
           <section className="py-24 px-6 border-y border-white/5 bg-[#0A0A0A]">
-            <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12">
+            <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
               {METRICS.map((metric, i) => (
-                <div key={i} className="group text-center py-12 px-6 rounded-3xl transition-colors hover:bg-white/5">
-                  <span className={`block text-5xl md:text-7xl font-black text-white mb-4 transition-all group-hover:text-${metric.color}-400 group-hover:scale-110 tracking-tighter`}>{metric.value}</span>
-                  <span className="text-neutral-500 font-bold uppercase text-[11px] tracking-[0.2em]">{metric.label}</span>
+                <div key={i} className="group relative p-8 rounded-3xl bg-[#0E0E0E] border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden flex flex-col items-center justify-center text-center">
+                  {/* Hover Glow Background */}
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-${metric.color}-500/10 to-transparent pointer-events-none`} />
+                  
+                  {/* Top Border Highlight */}
+                  <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-${metric.color}-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  
+                  <div className="relative z-10">
+                    <span className={`block text-5xl md:text-7xl font-display font-black text-white mb-4 transition-all group-hover:text-${metric.color}-400 tracking-tighter group-hover:scale-105 duration-500`}>
+                        {metric.value}
+                    </span>
+                    <span className="text-neutral-500 font-bold uppercase text-[11px] tracking-[0.2em] group-hover:text-neutral-300 transition-colors">
+                        {metric.label}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -491,7 +545,7 @@ const App: React.FC = () => {
 
               <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 relative h-[500px] rounded-[3rem] overflow-hidden group cursor-pointer border border-white/10 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1200" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tech Visual" />
+                  <img src={MOCK_EVENTS[0].image} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tech Visual" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                   <div className="absolute top-10 left-10">
                     <span className="px-4 py-1.5 bg-verde-600 text-white text-[10px] font-black tracking-widest uppercase rounded-lg shadow-lg">DESTAQUE</span>
@@ -509,14 +563,18 @@ const App: React.FC = () => {
 
                 <div className="flex flex-col gap-6">
                   {MOCK_EVENTS.filter(e => !e.isFeatured).map(event => (
-                    <div key={event.id} className="p-8 glass-verde rounded-[2.5rem] border border-white/5 hover:border-verde-500/30 hover:bg-verde-500/5 transition-all group cursor-pointer flex items-center gap-8">
-                      <div className="flex flex-col items-center justify-center w-24 h-24 bg-neutral-900 border border-verde-500/10 rounded-3xl shrink-0">
-                        <span className="text-[11px] font-black text-verde-400 uppercase leading-none mb-1.5">{event.date.split(' ')[1]}</span>
-                        <span className="text-3xl font-black text-white leading-none">{event.date.split(' ')[0]}</span>
+                    <div key={event.id} className="p-4 glass-verde rounded-[2rem] border border-white/5 hover:border-verde-500/30 hover:bg-verde-500/5 transition-all group cursor-pointer flex items-center gap-6">
+                      <div className="relative w-28 h-24 shrink-0 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                        <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                        <div className="absolute top-2 left-2 bg-neutral-900/80 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 flex flex-col items-center">
+                           <span className="text-[9px] font-black text-verde-400 uppercase leading-none mb-0.5">{event.date.split(' ')[1]}</span>
+                           <span className="text-sm font-black text-white leading-none">{event.date.split(' ')[0]}</span>
+                        </div>
                       </div>
                       <div>
-                        <h4 className="font-black text-white text-xl group-hover:text-verde-300 transition-colors mb-2 tracking-tight">{event.title}</h4>
-                        <p className="text-sm text-neutral-500 flex items-center gap-1.5 font-medium"><MapPin size={14} /> {event.location}</p>
+                        <h4 className="font-black text-white text-lg group-hover:text-verde-300 transition-colors mb-2 tracking-tight leading-tight">{event.title}</h4>
+                        <p className="text-xs text-neutral-400 flex items-center gap-1.5 font-bold uppercase tracking-wide"><MapPin size={12} className="text-verde-500" /> {event.location}</p>
                       </div>
                     </div>
                   ))}

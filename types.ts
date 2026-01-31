@@ -17,6 +17,7 @@ export interface STEvent {
   location: string;
   isFeatured?: boolean;
   type: string;
+  image?: string;
 }
 
 export interface Metric {
