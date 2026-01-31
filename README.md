@@ -1,6 +1,6 @@
 # Superteam Brazil – Landing Page & Members Directory Design 🇧🇷
 
-![Superteam Brazil – Landing Page Preview](assets/superteam-brazil-hero.png)
+![Superteam Brazil – Landing Page Preview](main/superteam-brazil-hero.png)
 
 Premium Figma design created for **Superteam Brazil**, positioning the community as the main hub for **Solana builders in Brazil** and a strategic bridge between Latin America and the global Superteam ecosystem.
 
