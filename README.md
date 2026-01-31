@@ -1,20 +1,94 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Superteam Brazil – Landing Page & Members Directory Design 🇧🇷
 
-# Run and deploy your AI Studio app
+![Superteam Brazil – Landing Page Preview](assets/superteam-brazil-hero.png)
 
-This contains everything you need to run your app locally.
+Premium Figma design created for **Superteam Brazil**, positioning the community as the main hub for **Solana builders in Brazil** and a strategic bridge between Latin America and the global Superteam ecosystem.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1KmornCkp9RLG5zCWMKYr2HQmZqjDD1QL
+---
 
-## Run Locally
+## 🔗 Links
 
-**Prerequisites:**  Node.js
+- **Figma Design (View Only):** seu-link-aqui  
+- **Design Rationale / Presentation:** seu-link-aqui  
+- **Announcement / Submission Post:** seu-link-aqui  
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🎨 Design Approach
+
+Dark-mode Web3 interface designed to balance a **strong Brazilian identity** with **strict alignment to Superteam’s global brand standards**.
+
+The visual system follows established Superteam references (UAE, France, Germany, Vietnam), ensuring consistency across regions, while introducing localized Brazilian signals in a **modern, non-cliché** way.
+
+The goal is clarity, credibility and scalability — presenting Superteam Brazil as a serious, high-quality ecosystem for builders, founders and creators.
+
+---
+
+## 🎯 Color Strategy
+
+- **Green (`#10B981`)** – Primary brand color, used for CTAs, highlights and key actions  
+- **Yellow (`#F59E0B`)** – Brazilian cultural emphasis, used selectively for contrast and emphasis  
+- **Blue (`#3B82F6`)** – Web3/global accent for hierarchy and balance  
+- **Purple (`#8B5CF6`)** – Superteam Global references and subtle gradient accents  
+
+Colors are intentionally controlled to maintain a premium Web3 feel while reinforcing Brazilian identity.
+
+---
+
+## 📦 Deliverables
+
+### Landing Page
+- Hero section with mission-driven headline and primary CTAs  
+- Mission / What We Do (6 core pillars)  
+- Impact metrics and community stats  
+- Events section (upcoming + highlights)  
+- Members preview with call-to-action  
+- Ecosystem partners  
+- Social proof and community credibility  
+- FAQ section  
+- Join / Build CTA  
+- Complete footer with navigation  
+
+### Members Page
+- Dedicated members directory page  
+- Grid-based member cards (avatar, name, role)  
+- Skill and role-based visual filtering  
+- Core Team visual distinction  
+- Consistent layout with the landing page  
+- Desktop and mobile versions  
+
+### Figma File
+- Style guide (colors, typography, spacing, shadows)  
+- Reusable component system with auto-layout  
+- Desktop and mobile layouts for both pages  
+- Interactive prototype showcasing main flows  
+
+---
+
+## 🇧🇷 Brazilian Identity
+
+- Portuguese-first copy (localized, not translated)  
+- Contemporary typography and geometric abstraction  
+- Subtle references to Brazilian architecture and urban culture  
+- Green and yellow used as **identity signals**, not decoration  
+- Zero tourist or stereotypical visuals  
+
+---
+
+## ⭐ Key Differentiators
+
+1. Brazilian identity integrated without breaking Superteam global standards  
+2. Clear information architecture focused on builders and opportunities  
+3. Dedicated Members Directory with Core Team distinction  
+4. Strong emphasis on community, events and real ecosystem impact  
+5. Clean documentation and presentation aligned with bounty evaluation criteria  
+
+---
+
+## 🏆 Submission Details
+
+**Submission for:** Superteam Brazil UI/UX Design Bounty  
+**Date:** January 2026  
+**Tags:** @SuperteamBR @SuperteamEarn  
+
+Made with 💚💛 for the Brazilian Solana community.
