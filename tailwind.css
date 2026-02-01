@@ -162,3 +162,25 @@
     transparent
   );
 }
+/* ============================= */
+/* FORCED GLOW (Tailwind-safe) */
+/* ============================= */
+
+.glow-amarelo {
+  box-shadow:
+    0 0 12px rgba(245, 158, 11, 0.35),
+    0 0 32px rgba(245, 158, 11, 0.25);
+}
+
+.glow-roxo {
+  box-shadow:
+    0 0 12px rgba(139, 92, 246, 0.40),
+    0 0 36px rgba(139, 92, 246, 0.30);
+}
+
+.glow-verde {
+  box-shadow:
+    0 0 12px rgba(16, 185, 129, 0.35),
+    0 0 32px rgba(16, 185, 129, 0.25);
+}
+
